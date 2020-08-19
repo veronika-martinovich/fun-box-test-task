@@ -1,0 +1,6 @@
+@import "../scss/mixins.scss";
+@import "../scss/constants.scss";
+
+.main-wrapper {
+  @include font($font-family, 20px, 400);
+}
