@@ -1,13 +1,16 @@
-import React from 'react';
+import React from "react";
 import "./App.scss";
+import { CatFood } from "../components/CatFood/CatFood";
 
 function App() {
   return (
-    <div className="app">
-      <main className="main-wrapper">
-        
-      </main>
-    </div>
+    <main>
+      <div className="app">
+        <div className="app-wrapper">
+          <CatFood />
+        </div>
+      </div>
+    </main>
   );
 }
 
