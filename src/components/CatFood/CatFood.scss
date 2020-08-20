@@ -2,10 +2,23 @@
 @import "../../scss/constants.scss";
 
 .cat-food {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   padding-top: 47px;
   padding-bottom: 67px;
+  margin: 0 auto;
 }
 
 .cat-food__title {
   @include font($font-family, 36px, 300, $primary-font-color);
+  margin-bottom: 20px;
+}
+
+.cat-food__container {
+  display: flex;
+  flex-direction: row wrap;
+  justify-content: space-around;
+  max-width: 1280px;
+  width: 1280px;
 }
