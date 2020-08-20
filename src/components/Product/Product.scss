@@ -1,6 +1,11 @@
 @import "../../scss/mixins.scss";
 @import "../../scss/constants.scss";
 
+.product {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
 .product__container-wrapper {
   display: flex;
@@ -9,7 +14,7 @@
   width: 320px;
   height: 480px;
   border-radius: 12px;
-  clip-path: polygon(0% 100%, 0% 10%, 15% 0%, 100% 0%, 100% 100%);
+  clip-path: polygon(0% 100%, 0% 8%, 13% 0%, 100% 0%, 100% 100%);
 
   &_accent-1 {
     background-color: $product-accent-color-1;
@@ -25,9 +30,107 @@
 }
 
 .product__container {
+  position: relative;
   width: 312px;
   height: 472px;
   border-radius: 12px;
   background-color: $product-bg-color;
-  clip-path: polygon(0% 100%, 0% 10%, 15% 0%, 100% 0%, 100% 100%);
+  clip-path: polygon(0% 100%, 0% 8%, 13% 0%, 100% 0%, 100% 100%);
+  padding-top: 15px;
+  padding-left: 40px;
+  overflow: hidden;
+}
+
+.product__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 312px;
+  height: 472px;
+  border-radius: 12px;
+  background-color: $product-bg-color;
+  opacity: 0.6;
+  clip-path: polygon(0% 100%, 0% 8%, 13% 0%, 100% 0%, 100% 100%);
+  z-index: 1;
+}
+
+.product__title {
+  @include font($product-font-family, 16px, 400, $product-secondary-font-color);
+}
+
+.product__name {
+  @include font($product-font-family, 48px, bold, $product-primary-font-color);
+  margin-top: 13px;
+}
+
+.product__description {
+  display: block;
+  @include font($product-font-family, 24px, bold, $product-primary-font-color);
+  margin-top: 5px;
+  margin-bottom: 20px;
+}
+
+.product__additional-info {
+  display: block;
+  @include font($product-font-family, 14px, 400, $product-secondary-font-color);
+}
+
+.product__img {
+  position: absolute;
+  width: 350px;
+  height: 342px;
+  left: -30px;
+  top: 210px;
+}
+
+.product__weight {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+
+  &_accent-1 {
+    background-color: $product-accent-color-1;
+  }
+
+  &_accent-2 {
+    background-color: $product-accent-color-2;
+  }
+
+  &_disabled {
+    background-color: $product-accent-disabled;
+  }
+
+  & span:first-child {
+    @include font($product-font-family, 36px, 400, $primary-font-color);
+    line-height: 30px;
+  }
+
+  & span:last-child {
+    @include font($product-font-family, 20px, 400, $primary-font-color);
+  }
+}
+
+.product__comment-container {
+  margin-top: 10px;
+}
+
+.product__comment {
+  &_text {
+    @include font($product-font-family, 13px, 400, $product-comment-color-text);
+  }
+
+  &_link {
+    @include font($product-font-family, 13px, 400, $product-comment-color-link);
+  }
+
+  &_warning {
+    @include font($product-font-family, 13px, 400, $product-comment-color-warning);
+  }
 }

@@ -11,7 +11,7 @@
 }
 
 .cat-food__title {
-  @include font($font-family, 36px, 300, $primary-font-color);
+  @include font($primary-font-family, 36px, 300, $primary-font-color);
   margin-bottom: 20px;
 }
 
