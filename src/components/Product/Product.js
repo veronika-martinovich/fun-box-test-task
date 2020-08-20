@@ -1,12 +1,29 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Product.scss";
 import Cat from "../../assets/images/Cat.png";
 
 export const Product = ({ product }) => {
+  const [isSelected, setIsSelected] = useState(false);
+
+  const handleProductClick = () => {
+    if (product.isAvailable) {
+      setIsSelected(!isSelected);
+    }
+  };
+
   return (
     <div className="product">
+      {isSelected && (
+        <div className="product__mark-container">
+          <span className="product__mark">
+            <span className="plus"></span>
+            <span className="plus"></span>
+          </span>
+        </div>
+      )}
       <div
         className={`product__container-wrapper product__container-wrapper_${product.styles}`}
+        onClick={handleProductClick}
       >
         <div className="product__container">
           {!product.isAvailable && <div className="product__overlay"></div>}
@@ -32,6 +49,7 @@ export const Product = ({ product }) => {
           <span
             className={`product__comment product__comment_${item.styles}`}
             key={index}
+            onClick={item.styles === "link" ? handleProductClick : null}
           >
             {item.text}
           </span>
