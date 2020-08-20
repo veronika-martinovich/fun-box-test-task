@@ -1,0 +1,14 @@
+@import "../../scss/constants.scss";
+
+.product__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 312px;
+  height: 472px;
+  border-radius: 12px;
+  background-color: $product-bg-color;
+  opacity: 0.6;
+  clip-path: polygon(0% 100%, 0% 8%, 13% 0%, 100% 0%, 100% 100%);
+  z-index: 1;
+}

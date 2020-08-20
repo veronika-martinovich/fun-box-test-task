@@ -1,0 +1,36 @@
+@import "../../scss/mixins.scss";
+@import "../../scss/constants.scss";
+
+.product__weight {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+
+  &_accent-1 {
+    background-color: $product-accent-color-1;
+  }
+
+  &_accent-2 {
+    background-color: $product-accent-color-2;
+  }
+
+  &_disabled {
+    background-color: $product-accent-disabled;
+  }
+
+  & span:first-child {
+    @include font($product-font-family, 36px, 400, $primary-font-color);
+    line-height: 30px;
+  }
+
+  & span:last-child {
+    @include font($product-font-family, 20px, 400, $primary-font-color);
+  }
+}

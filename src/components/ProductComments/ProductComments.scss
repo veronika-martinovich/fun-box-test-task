@@ -1,0 +1,26 @@
+@import "../../scss/mixins.scss";
+@import "../../scss/constants.scss";
+
+.product__comment-container {
+  margin-top: 10px;
+}
+
+.product__comment {
+  &_text {
+    @include font($product-font-family, 13px, 400, $product-comment-color-text);
+  }
+
+  &_link {
+    @include font($product-font-family, 13px, 400, $product-comment-color-link);
+    cursor: pointer;
+  }
+
+  &_warning {
+    @include font(
+      $product-font-family,
+      13px,
+      400,
+      $product-comment-color-warning
+    );
+  }
+}

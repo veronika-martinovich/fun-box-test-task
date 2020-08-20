@@ -1,6 +1,11 @@
 import React, { useState } from "react";
 import "./Product.scss";
 import Cat from "../../assets/images/Cat.png";
+import { ProductMark } from "../ProductMark/ProductMark";
+import { ProductWeight } from "../ProductWeight/ProductWeight";
+import { ProductComments } from "../ProductComments/ProductComments";
+import { ProductImg } from "../ProductImg/ProductImg";
+import { ProductOverlay } from "../ProductOverlay/ProductOverlay";
 
 export const Product = ({ product }) => {
   const [isSelected, setIsSelected] = useState(false);
@@ -13,20 +18,13 @@ export const Product = ({ product }) => {
 
   return (
     <div className="product">
-      {isSelected && (
-        <div className="product__mark-container">
-          <span className="product__mark">
-            <span className="plus"></span>
-            <span className="plus"></span>
-          </span>
-        </div>
-      )}
+      {isSelected && <ProductMark />}
       <div
         className={`product__container-wrapper product__container-wrapper_${product.styles}`}
         onClick={handleProductClick}
       >
         <div className="product__container">
-          {!product.isAvailable && <div className="product__overlay"></div>}
+          {!product.isAvailable && <ProductOverlay />}
           <span className="product__title">{product.title}</span>
           <h3 className="product__name">
             {product.name}
@@ -37,24 +35,14 @@ export const Product = ({ product }) => {
               {item}
             </span>
           ))}
-          <img src={Cat} alt="Cat" className="product__img" />
-          <div className={`product__weight product__weight_${product.styles}`}>
-            <span>{product.weight}</span>
-            <span>кг</span>
-          </div>
+          <ProductImg imgSrc={Cat} />
+          <ProductWeight styles={product.styles} weight={product.weight} />
         </div>
       </div>
-      <div className="product__comment-container">
-        {product.comments.map((item, index) => (
-          <span
-            className={`product__comment product__comment_${item.styles}`}
-            key={index}
-            onClick={item.styles === "link" ? handleProductClick : null}
-          >
-            {item.text}
-          </span>
-        ))}
-      </div>
+      <ProductComments
+        comments={product.comments}
+        handleProductClick={handleProductClick}
+      />
     </div>
   );
 };
