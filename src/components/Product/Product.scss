@@ -1,0 +1,10 @@
+@import "../../scss/mixins.scss";
+@import "../../scss/constants.scss";
+
+.product__container {
+  width: 320px;
+  height: 480px;
+  border-radius: 12px;
+  background-color: $product-bg-color;
+  border: 4px solid $product-accent-color-1;
+}
