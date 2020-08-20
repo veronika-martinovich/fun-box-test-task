@@ -13,12 +13,31 @@
 .cat-food__title {
   @include font($primary-font-family, 36px, 300, $primary-font-color);
   margin-bottom: 20px;
+
+  @include media-mobile-small {
+    font-size: 28px;
+  }
 }
 
 .cat-food__container {
   display: flex;
-  flex-direction: row wrap;
+  flex-flow: row wrap;
   justify-content: space-around;
-  max-width: 1280px;
   width: 1280px;
+
+  @include media-laptop {
+    width: 1020px;
+  }
+
+  @include media-tablet {
+    width: 768px;
+  }
+
+  @include media-mobile-big {
+    width: 480px;
+  }
+
+  @include media-mobile-small {
+    width: 375px;
+  }
 }

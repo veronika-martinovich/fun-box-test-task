@@ -12,6 +12,7 @@
 
   &_link {
     @include font($product-font-family, 13px, 400, $product-comment-color-link);
+    border-bottom: 1px dashed $product-comment-color-link;
     cursor: pointer;
   }
 
